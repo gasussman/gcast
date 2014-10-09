@@ -1,10 +1,11 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" data-ng-app="gcastCapstoneApp">
   <head>
     <meta charset="utf-8">
     <title>G-Cast</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -14,26 +15,20 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="gcastCapstoneApp">
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <!-- Add your site or application content here -->
+  <body>
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
+          <li><a ui-sref='stream'>Stream</a></li>
         </ul>
         <h3 class="text-muted">gcastCapstone</h3>
       </div>
 
-      <div ng-view=""></div>
+      <div ui-view></div>
 
       <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        <p><span class="glyphicon glyphicon-heart"></span></p>
       </div>
     </div>
 

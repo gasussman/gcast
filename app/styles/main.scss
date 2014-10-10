@@ -2,6 +2,29 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // bower:scss
 // endbower
 
+.video-stream {
+  border-bottom: 1px solid black;
+}
+
+.chat-canvas {
+  float: left;
+  border: 1px solid black;
+}
+
+.usernames {
+  float: right;
+  width: 40px;
+  border: 1px solid black;
+}
+
+.container {
+  border: 1px solid black;
+}
+
+.chat-window {
+  border: 1px solid black;
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;

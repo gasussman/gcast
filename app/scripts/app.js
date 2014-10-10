@@ -27,4 +27,16 @@
 
  }]);
 
+gcastCapstoneApp.controller('Stream.controller', ['$scope', 'ChatWindow', 'VideoStream', 
+function($scope, ChatWindow, VideoStream) {
+}]);
+
+gcastCapstoneApp.service('ChatWindow', [ '$rootScope', function($rootScope) {
+  }]);
+
+gcastCapstoneApp.service('VideoStream', [ '$rootScope', function($rootScope) {
+  }]);
+
+
+
 

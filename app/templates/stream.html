@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="video-stream col-sm-4">
-      <canvas></canvas>
+    <div class="video-stream col-sm-5">
+      <canvas width='500' height='500'></canvas>
       <div class="video-control-panel">
         <div class='volume'>
          <i class='fa' ng-class='volumeClass()'></i>
@@ -9,15 +9,15 @@
        </div>
       </div>
     </div>
-    <div class="chat-window col-sm-8">
-      <canvas></canvas>
+    <div class="chat-window col-sm-7">
+      <canvas class='chat-canvas' width='500' height='500'></canvas>
       <div class="username-container">
         <div class='usernames'>
         </div>
         <button class='register'>Register</button>
       </div>
       <div class="chat-submit-bar">
-        <input></input>
+        <textarea type='message' class='form-control' id="inputMessage" placeholder="Message" cols="20" rows="1"></textarea>
         <button>submit</button>
     </div>
 

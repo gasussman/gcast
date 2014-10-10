@@ -10,15 +10,22 @@
       </div>
     </div>
     <div class="chat-window col-sm-7">
-      <canvas class='chat-canvas' width='500' height='500'></canvas>
+      <div ng-controller="ChatCtrl">
+        <ul>
+            <li ng-repeat="message in messages">{{message}}</li>
+        </ul>
+
+        <form ng-submit="sendMessage()">
+            <input type="text" ng-model="messageText" placeholder="Type your message here" />
+            <input type="submit" value="Send" />
+        </form>
+      </div>
       <div class="username-container">
         <div class='usernames'>
         </div>
         <button class='register'>Register</button>
       </div>
       <div class="chat-submit-bar">
-        <textarea type='message' class='form-control' id="inputMessage" placeholder="Message" cols="20" rows="1"></textarea>
-        <button>submit</button>
     </div>
 
   </div>

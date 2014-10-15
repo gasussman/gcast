@@ -29,6 +29,7 @@
 gcastCapstoneApp.controller('ChatCtrl', ['$scope', function($scope) {
       var sock = new SockJS('http://127.0.0.1:9999/chat');
             $scope.messages = [];
+            $scope.usernames = [];
             $scope.sendMessage = function() {
                 sock.send($scope.messageText);
                 $scope.messageText = "";
@@ -38,6 +39,11 @@ gcastCapstoneApp.controller('ChatCtrl', ['$scope', function($scope) {
                 $scope.messages.push(e.data);
                 $scope.$apply();
             };
+      $scope.registerUser = function() {
+        $('#userModal').modal();
+      };
+
+
   }]);
 
 gcastCapstoneApp.service('VideoStream', [ '$rootScope', function($rootScope) {

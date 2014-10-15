@@ -1,32 +1,46 @@
-<div class="container">
+<div class="container stream-chat">
   <div class="row">
-    <div class="video-stream col-sm-5">
-      <canvas width='500' height='500'></canvas>
-      <div class="video-control-panel">
-        <div class='volume'>
-         <i class='fa' ng-class='volumeClass()'></i>
-    <!-- add vertical volume slider - <slider value='{{}}' max='100' on-change='.setVolume(value)'></slider> -->
-       </div>
-      </div>
-    </div>
-    <div class="chat-window col-sm-7">
-      <div ng-controller="ChatCtrl">
-        <ul>
-            <li ng-repeat="message in messages">{{message}}</li>
-        </ul>
 
-        <form ng-submit="sendMessage()">
-            <input type="text" ng-model="messageText" placeholder="Type your message here" />
-            <input type="submit" value="Send" />
-        </form>
-      </div>
-      <div class="username-container">
-        <div class='usernames'>
+        <div class="video-stream col-sm-4">
+          <canvas width='200' height ='400'></canvas>
+          <div class="video-control-panel">
+            <div class='volume'>
+             <i class='fa-volume-up' ng-class='volumeClass()'></i>
+        <!-- add vertical volume slider - <slider value='{{}}' max='100' on-change='.setVolume(value)'></slider> -->
+           </div>
+          </div>
         </div>
-        <button class='register'>Register</button>
-      </div>
-      <div class="chat-submit-bar">
-    </div>
 
-  </div>
+        <div class="chat-window col-sm-6" ng-controller="ChatCtrl">
+            <ul>
+                <li ng-repeat="message in messages track by $index">{{message}}</li>
+            </ul>
+
+            <form ng-submit="sendMessage()">
+                <input type="text" ng-model="messageText" placeholder="Type your message here" />
+                <input type="submit" value="Send" />
+            </form>
+          </div>
+          <div class="username-container col-sm-2">
+                <div class='usernames'></div>
+                <div class='button-wrap'><button class='register' ng-click='registerUser()'>Register</button></div>
+          </div>
+
+            <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  </div>
+                  <div class="modal-body">
+                    <form ng-submit="registerUser()">
+                        <input type="text"  placeholder="Choose Username" ng-model='newUsername'></input>
+                        <input type="submit" value="Send">Change</input>
+                    </form>
+                  </div>
+                 </div>
+                </div>
+              </div>
+          </div>
+ </div>
 </div>

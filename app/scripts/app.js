@@ -48,8 +48,10 @@ gcastCapstoneApp.controller('ChatCtrl', ['$scope', function($scope) {
         
 
         $scope.username = $scope.newUsername;
+        $scope.usernames.push($scope.newUsername);
         $scope.newUsername = "";
-        if($scope.username === 'a') return false;
+        if($scope.username === 'a') return;
+
         $('#userModal').modal('hide');
       };
 

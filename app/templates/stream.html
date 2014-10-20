@@ -1,8 +1,8 @@
 <div class="container stream-chat">
   <div class="row">
 
-        <div class="video-stream col-sm-4">
-          <canvas width='200' height ='400'></canvas>
+        <div class="video-stream col-sm-5">
+          <canvas width='300' height ='300'></canvas>
           <div class="video-control-panel">
             <div class='volume'>
              <i class='fa-volume-up' ng-class='volumeClass()'></i>
@@ -11,22 +11,35 @@
           </div>
         </div>
 
-        <div class="chat-window col-sm-6" ng-controller="ChatCtrl">
+        <div class="chat-window col-sm-4 col-sm-offset-1">
             <ul>
                 <li ng-repeat="message in messages track by $index">{{message}}</li>
             </ul>
+        </div>
 
-            <form ng-submit="sendMessage()">
-                <input type="text" ng-model="messageText" placeholder="Type your message here" />
-                <input type="submit" value="Send" />
-            </form>
-          </div>
           <div class="username-container col-sm-2">
-                <div class='usernames'></div>
-                <div class='button-wrap'><button class='register' ng-click='registerUser()'>Register</button></div>
-          </div>
+                <div class='usernames'>
+                    <ul>
+                      <li ng-repeat="username in usernames">{{username}}</li>
+                    </ul>
+                </div>
+         </div>
+        </div>
+        </div>
 
-            <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="container input-bars">
+             <div class="row">
+
+              <div class="text-bar col-sm-4 col-sm-offset-6"> 
+                <form ng-submit="sendMessage()">
+                  <input type="text" ng-model="messageText" placeholder="Type your message here" class='input-bar' />
+                  <input type="submit" value="Send" class='chat-button'/>
+                </form>
+            </div>
+
+                <div class='button-wrap col-sm-2'><button class='register' data-toggle="modal" data-target="#userModal">Register</button></div>
+
+                <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -34,13 +47,14 @@
                   </div>
                   <div class="modal-body">
                     <form ng-submit="registerUser()">
-                        <input type="text"  placeholder="Choose Username" ng-model='newUsername'></input>
-                        <input type="submit" value="Send">Change</input>
+                        <input type="text"  placeholder="Choose an Awesome Username" ng-model='newUsername' class='modal-text'></input>
+                        <input type="submit" value="Switch it up!" class="modal-switch"></input>
                     </form>
                   </div>
                  </div>
                 </div>
-              </div>
           </div>
- </div>
-</div>
+        </div>
+
+            
+            

@@ -1,60 +1,70 @@
 <div class="container stream-chat">
   <div class="row">
 
-        <div class="video-stream col-sm-5">
-          <video autoplay="true" id="videoElement"></video>
-          <div class="video-control-panel">
-            <div class='volume'>
-             <i class='fa-volume-up' ng-class='volumeClass()'></i>
-        <!-- add vertical volume slider - <slider value='{{}}' max='100' on-change='.setVolume(value)'></slider> -->
-           </div>
-          </div>
-        </div>
-
-        <div class="chat-window col-sm-4 col-sm-offset-1">
-            <ul>
-                <li ng-repeat="message in messages track by $index">{{message}}</li>
-            </ul>
-        </div>
-
-          <div class="username-container col-sm-2">
-                <div class='usernames'>
-                    <ul>
-                      <li ng-repeat="username in usernames">{{username}}</li>
-                    </ul>
-                </div>
+    <div class="col-sm-5">
+      <div class="video-stream">
+        <video autoplay="true" id="videoElement"></video>
+        <div class="video-control-panel">
+          <div class='volume'>
+           <i class='fa-volume-up' ng-class='volumeClass()'></i>
+           <!-- add vertical volume slider - <slider value='{{}}' max='100' on-change='.setVolume(value)'></slider> -->
          </div>
-        </div>
-        </div>
+       </div>
+     </div>
+   </div>
 
-        <div class="container input-bars">
-             <div class="row">
+   <div class="col-sm-4 col-sm-offset-1 test">
+    <div class="chat-window">
+      <ul>
+        <li ng-repeat="message in messages track by $index">{{message}}</li>
+      </ul>
 
-              <div class="text-bar col-sm-4 col-sm-offset-6"> 
-                <form ng-submit="sendMessage()">
-                  <input type="text" ng-model="messageText" placeholder="Type your message here" class='input-bar' />
-                  <input type="submit" value="Send" class='chat-button'/>
-                </form>
-            </div>
 
-                <div class='button-wrap col-sm-2'><button class='register' data-toggle="modal" data-target="#userModal">Register</button></div>
+    </div>
+  </div>
 
-                <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                  </div>
-                  <div class="modal-body">
-                    <form ng-submit="registerUser()">
-                        <input type="text"  placeholder="Choose an Awesome Username" ng-model='newUsername' class='modal-text'></input>
-                        <input type="submit" value="Switch it up!" class="modal-switch"></input>
-                    </form>
-                  </div>
-                 </div>
-                </div>
-          </div>
-        </div>
+  <div class="col-sm-2 test2">
+    <div class='username-container'>
+      <ul>
+        <li ng-repeat="username in usernames">{{username}}</li>
+      </ul>
 
-            
-            
+    </div>
+    
+  </div>
+</div>
+
+<div class ='row'>
+  <div class="col-sm-4 col-sm-offset-6 test3">
+    <div class="text-bar"> 
+      <form ng-submit="sendMessage()">
+        <input type="text" ng-model="messageText" placeholder="Type your message here" class='input-bar' />
+        <input type="submit" value="Send" class='chat-button'/>
+      </form>
+    </div>
+  </div>
+  <div class ="col-sm-2 test4">
+    <div class='button-wrap'><button class='register' data-toggle="modal" data-target="#userModal">Register</button></div>
+  </div>
+</div>
+
+<div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      </div>
+      <div class="modal-body">
+        <form ng-submit="registerUser()">
+          <input type="text"  placeholder="Choose an Awesome Username" ng-model='newUsername' class='modal-text'></input>
+          <input type="submit" value="Switch it up!" class="modal-switch"></input>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+

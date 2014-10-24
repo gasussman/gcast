@@ -1,22 +1,21 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: ChatCtrl', function () {
 
-  // load the controller's module
   beforeEach(module('gcastCapstoneApp'));
 
-  var MainCtrl,
-    scope;
+  var ChatCtrl;
+  var scope;
 
-  // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
-      $scope: scope
-    });
+    ChatCtrl = $controller('ChatCtrl', { $scope: scope });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+  it('should change the username', function () {
+    scope.newUsername = 'mike';
+    scope.registerUser();
+
+    expect(scope.username).toBe('mike');
   });
 });

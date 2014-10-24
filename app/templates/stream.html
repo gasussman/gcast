@@ -5,6 +5,9 @@
       <div class="video-stream">
         <video autoplay="true" id="videoElement"></video>
         <div class="video-control-panel">
+          <button id="startButton">Start</button>
+          <button id="callButton">Call</button>
+          <button id="hangupButton">Hang Up</button>
           <div class='volume'>
            <i class='fa-volume-up' ng-class='volumeClass()'></i>
            <!-- add vertical volume slider - <slider value='{{}}' max='100' on-change='.setVolume(value)'></slider> -->
@@ -15,9 +18,8 @@
 
    <div class="col-sm-4 col-sm-offset-1 test">
     <div class="chat-window">
-      <ul>
-        <li ng-repeat="message in messages track by $index">{{message}}</li>
-      </ul>
+      <textarea id="dataChannelSend" disabled placeholder="Press Start, enter some text, then press Send."></textarea>
+      <textarea id="dataChannelReceive" disabled></textarea>
 
 
     </div>
